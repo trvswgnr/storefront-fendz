@@ -1,0 +1,133 @@
+/*
+Theme Name: Storefront - fendz
+Theme URI: https://github.com/storefront-fendz
+description: >-
+  Storefront child theme.
+Author: Travis Aaron Wagner
+Author URI: https://justfendz.com
+Template: storefront
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: ecommerce, fendz, music
+Text Domain: storefront-fendz
+*/
+
+#secondary {
+    padding: 8px;
+    border: 1px solid #000;
+}
+
+.woocommerce-checkout #secondary,
+.woocommerce-cart #secondary,
+.page-id-1362 #secondary {
+	visibility: hidden;
+}
+
+@media (min-width: 768px) {
+.site-header .site-branding img {
+    height: auto;
+    max-width: 100px;
+    max-height: none;
+}
+	
+	#secondary {
+    padding: 15px;
+    border: 1px solid #000;
+	}
+}
+
+.customize-unpreviewable {
+    display: none;
+}
+
+/*.site-info {
+    position: relative;
+    left: -1000px;
+}
+
+.site-info::after {
+    content: "© fendz 2019";
+    position: absolute;
+    overflow: visible;
+    width: 300px;
+    height: 300px;
+    left: 1000px;
+    top: 0;
+}*/
+
+h1, h2, h3, h4, h5, h6, body, button, input, textarea, select {
+	font-family: Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6, body, button, input::placeholder, select {
+	text-transform: lowercase;
+}
+
+.woocommerce-checkout select,
+.woocommerce-cart select,
+.woocommerce-checkout .entry-content,
+.woocommerce-cart .entry-content {
+	text-transform: initial;
+}
+
+img {
+	border-radius: 0;
+}
+
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 1px solid #000000;
+}
+
+.custom-logo-link:focus {
+	outline: none;
+}
+
+.woocommerce-Tabs-panel {
+	text-transform: initial;
+}
+
+/** Banner Homepage */
+.tw-banner {
+    position: relative;
+    display: block;
+}
+
+.tw-banner .banner-text {
+    position: absolute;
+    left: 330px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+@media (max-width: 1024px) {
+	.tw-banner .banner-text {
+    left: 25%;
+    font-size: calc(1em + 2vw);
+    width: calc(1em + 61vw);
+	}
+}
+@media (max-width: 500px) {
+
+.tw-banner .banner-text {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: calc(1em + 2vw);
+    width: calc(1em + 61vw);
+}
+	.tw-banner img {
+			opacity: 0.5;
+	}
+}
+
+.page-id-1362 {
+	text-transform: initial;
+}
+
+.hentry p {
+    font-size: 1.1em;
+}
