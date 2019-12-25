@@ -12,6 +12,8 @@ Tags: ecommerce, fendz, music
 Text Domain: storefront-fendz
 */
 
+$color__primary: #3e1c79;
+
 html {
 	font-size: 16px;
 }
@@ -137,11 +139,21 @@ textarea:focus {
 }
 
 .site-footer .storefront-handheld-footer-bar a:not(.button) {
-	background: #3e1c79;
+	background: $color__primary;
 	color: #fff;
 }
 
 .storefront-handheld-footer-bar {
 	border-top: none;
 	box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+}
+
+.woocommerce-info,
+.woocommerce-noreviews,
+p.no-comments {
+	background-color: $color__primary;
+}
+
+.site-info {
+	display: none;
 }
