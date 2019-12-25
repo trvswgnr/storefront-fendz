@@ -135,3 +135,13 @@ textarea:focus {
 .hentry .entry-content .wp-block-button:not(.is-style-squared) .wp-block-button__link {
 	border-radius: 0;
 }
+
+.site-footer .storefront-handheld-footer-bar a:not(.button) {
+	background: #3e1c79;
+	color: #fff;
+}
+
+.storefront-handheld-footer-bar {
+	border-top: none;
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+}
