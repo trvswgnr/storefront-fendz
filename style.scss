@@ -137,7 +137,7 @@ textarea:focus {
 .wp-block-embed-spotify iframe {
 	width: 100%;
 	margin-bottom: 3em;
-	height: 50vh;
+	height: 50vh !important;
 }
 
 .editor-styles-wrapper .wp-block-button:not(.is-style-squared) .wp-block-button__link,
@@ -164,3 +164,8 @@ p.no-comments {
 .site-info {
 	display: none;
 }
+
+.single .entry-title {
+	margin-top: 0.5em;
+}
+
