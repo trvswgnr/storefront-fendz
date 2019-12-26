@@ -93,6 +93,12 @@ select {
 	text-transform: lowercase;
 }
 
+form,
+select,
+input {
+	font-size: 16px;
+}
+
 .woocommerce-checkout select,
 .woocommerce-cart select,
 .woocommerce-checkout .entry-content,
