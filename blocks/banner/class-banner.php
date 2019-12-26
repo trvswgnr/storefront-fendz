@@ -69,7 +69,8 @@ class Banner extends Block {
 	 * @param Object $block Gutenberg block object.
 	 */
 	public function callback( $block ) {
-		$align        = $block['align'] ? ' banner__content--' . $block['align'] : '';
+		$align        = 'banner-content--wide';
+		$align        = $block['align'] ? ' banner__content--' . $block['align'] : $align;
 		$class_name   = ! empty( $block['className'] ) ? $this->slug . ' ' . $block['className'] : $this->slug;
 		$current_date = gmdate( 'U' );
 		$expires_date = get_field( 'banner_expires' ) ? gmdate( 'U', strtotime( get_field( 'banner_expires' ) ) ) : false;
@@ -83,7 +84,8 @@ class Banner extends Block {
 		  href="<?php the_field( 'banner_link' ); ?>"
 		  id="<?php echo esc_attr( $block['id'] ); ?>"
 		  class="<?php echo esc_attr( $class_name ); ?>"
-		  style="<?php echo esc_attr( $inline_style ); ?>">
+		  style="<?php echo esc_attr( $inline_style ); ?>"
+		  target="_blank">
 			<div class="banner__content<?php echo esc_attr( $align ); ?>">
 				<span class="banner__text"><?php the_field( 'banner_text' ); ?></span>
 			</div>
