@@ -40,6 +40,15 @@ class Banner extends Block {
 						'preview_size'  => 'medium',
 						'library'       => 'all',
 					),
+					array(
+						'key'            => 'field_5e053345f4bfa',
+						'label'          => 'Expires',
+						'name'           => 'banner_expires',
+						'type'           => 'date_picker',
+						'display_format' => 'm/d/Y',
+						'return_format'  => 'm/d/Y',
+						'first_day'      => 1,
+					),
 				),
 				'location' => array(
 					array(
@@ -60,13 +69,21 @@ class Banner extends Block {
 	 * @param Object $block Gutenberg block object.
 	 */
 	public function callback( $block ) {
-		$align = $block['align'] ? ' banner__content--' . $block['align'] : '';
+		$align        = $block['align'] ? ' banner__content--' . $block['align'] : '';
+		$class_name   = ! empty( $block['className'] ) ? $this->slug . ' ' . $block['className'] : $this->slug;
+		$current_date = gmdate( 'U' );
+		$expires_date = get_field( 'banner_expires' ) ? gmdate( 'U', strtotime( get_field( 'banner_expires' ) ) ) : false;
+		$inline_style = 'background-image: url(' . get_field( 'banner_image' ) . ');';
+
+		if ( $expires_date && $expires_date <= $current_date ) {
+			$inline_style .= is_admin() ? 'opacity: 0.4;' : 'display: none;';
+		}
 		?>
 		<a
 		  href="<?php the_field( 'banner_link' ); ?>"
 		  id="<?php echo esc_attr( $block['id'] ); ?>"
-		  class="banner"
-		  style="background-image: url(<?php the_field( 'banner_image' ); ?>);">
+		  class="<?php echo esc_attr( $class_name ); ?>"
+		  style="<?php echo esc_attr( $inline_style ); ?>">
 			<div class="banner__content<?php echo esc_attr( $align ); ?>">
 				<span class="banner__text"><?php the_field( 'banner_text' ); ?></span>
 			</div>
