@@ -23,4 +23,4 @@ function fendz_admin_styles() {
 		'all'
 	);
 }
-// add_action( 'admin_head', 'fendz_admin_styles' );
+add_action( 'admin_head', 'fendz_admin_styles' );
