@@ -12,6 +12,11 @@
 	margin-bottom: 4.2em;
 	font-family: Georgia, "Times New Roman", Times, serif;
 
+	&:hover,
+	&:focus {
+		opacity: 0.9;
+	}
+
 	// disable link in admin.
 	.wp-admin & {
 		pointer-events: none;
