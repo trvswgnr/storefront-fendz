@@ -1,0 +1,42 @@
+/**
+ * Admin Styles
+ */
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body,
+button,
+input,
+textarea,
+select {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body,
+button,
+input::placeholder,
+select {
+	text-transform: lowercase;
+}
+
+form,
+select,
+input,
+.storefront-sorting {
+	font-size: 16px;
+}
+
+.wp-admin .editor-rich-text__editable {
+	text-transform: initial !important;
+}
