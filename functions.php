@@ -17,10 +17,10 @@ $banner = new Banner();
 function fendz_admin_styles() {
 	wp_enqueue_style(
 		'admin-styles',
-		get_stylesheet_directory_uri() . '/style.css',
+		get_stylesheet_directory_uri() . '/admin.css',
 		array(),
 		'1.0.0',
 		'all'
 	);
 }
-add_action( 'admin_head', 'fendz_admin_styles' );
+add_action( 'admin_enqueue_scripts', 'fendz_admin_styles' );
