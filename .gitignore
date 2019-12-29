@@ -4,3 +4,4 @@ functions-local.php
 .phpcs.xml
 phpcs.xml
 /node_modules
+db.sql
