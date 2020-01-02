@@ -24,26 +24,26 @@ foreach ( $fields as $key => $val ) {
 }
 $hero = wp_parse_args( $fields, $defaults );
 ?>
-<main class="sp-section--intro">
-	<section class="sp-section__contain">
-		<a href="https://justfendz.com" title="fendz" class="sp__logo">
+<main class="lp-section--intro">
+	<section class="lp-section__contain">
+		<a href="https://justfendz.com" title="fendz" class="lp__logo">
 			<img src="https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white-300x240.png" alt="fendz logo" srcset="https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white-300x240.png 300w, https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white-1024x819.png 1024w, https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white-768x614.png 768w, https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white-416x333.png 416w, https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white.png 1460w" sizes="(max-width: 300px) 100vw, 300px">
 		</a>
 
-		<div class="sp__info">
+		<div class="lp__info">
 			<h4><?php echo esc_html( $hero['subheading'] ); ?></h4>
 			<h1><?php echo esc_html( $hero['heading'] ); ?></h1>
-			<p><?php echo esc_html( $hero['description'] ); ?></p>
+			<div><?php echo wp_kses_post( $hero['description'] ); ?></div>
 		</div>
 
-		<div class="sp__subinfo">
-			<a href="<?php echo esc_url( $hero['btn']['url'] ); ?>" class="btn"><?php echo esc_html( $hero['btn']['title'] ); ?></a>
+		<div class="lp__subinfo">
+			<a href="<?php echo esc_url( $hero['btn']['url'] ); ?>" class="btn js-scroll-anchor"><?php echo esc_html( $hero['btn']['title'] ); ?></a>
 		</div>
 
-		<div class="sp__cover-cont">
-			<div class="sp__cover">
-				<img src="//highfive.getflywheel.com/hubfs/Landing_Pages/50-sites-ebook/refresh/50_sites_ipad_shadow_rounded.png" alt="iPad" class="sp__cover__frame">
-				<div class="sp__cover__img">
+		<div class="lp__cover-cont">
+			<div class="lp__cover">
+				<img src="//highfive.getflywheel.com/hubfs/Landing_Pages/50-sites-ebook/refresh/50_sites_ipad_shadow_rounded.png" alt="iPad" class="lp__cover__frame">
+				<div class="lp__cover__img">
 				<?php
 				if ( has_post_thumbnail() ) {
 					the_post_thumbnail( 'full' );
@@ -61,9 +61,9 @@ $hero = wp_parse_args( $fields, $defaults );
 if ( have_posts() ) :
 	if ( '' !== get_post()->post_content ) :
 		?>
-		<main class="sp-section--chapters">
-			<section class="sp-section__contain">
-				<div class="sp__content">
+		<main class="lp-section--details">
+			<section class="lp-section__contain">
+				<div class="lp__content">
 				<?php
 				while ( have_posts() ) {
 					the_post();
@@ -86,20 +86,20 @@ $defaults = array(
 );
 $footer   = wp_parse_args( $fields, $defaults );
 ?>
-<main class="sp-section--download" id="download">
-	<section class="sp-section__contain">
-		<div class="sp__content__form">
+<main class="lp-section--download" id="download">
+	<section class="lp-section__contain">
+		<div class="lp__content__form">
 			<h2><?php echo esc_html( $footer['heading'] ); ?></h2>
-			<p class="sp__download__intro"><?php echo esc_html( $footer['subheading'] ); ?></p>
+			<p class="lp__download__intro"><?php echo esc_html( $footer['subheading'] ); ?></p>
 
 			<div class="divider"></div>
 			<?php get_template_part( 'template-parts/form', 'newsletter' ); ?>
 		</div>
 	</section>
 
-	<section class="sp-section__contain sp__footer">
-		<div class="sp__content">
-			<a href="<?php echo esc_url( get_site_url() ); ?>" title="fendz" class="sp-footer__logo">
+	<section class="lp-section__contain lp__footer">
+		<div class="lp__content">
+			<a href="<?php echo esc_url( get_site_url() ); ?>" title="fendz" class="lp-footer__logo">
 				<img src="https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white-300x240.png" alt="fendz logo" srcset="https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white-300x240.png 300w, https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white-1024x819.png 1024w, https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white-768x614.png 768w, https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white-416x333.png 416w, https://justfendz.com/wp-content/uploads/2019/12/fendz-logo-white.png 1460w" sizes="(max-width: 300px) 100vw, 300px">
 			</a>
 			<a href="<?php echo esc_url( get_site_url() ); ?>" title="justfendz.com">justfendz.com</a>
