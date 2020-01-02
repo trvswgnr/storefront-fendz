@@ -24,9 +24,9 @@ add_action(
 
 $fields   = get_field( 'lp_colors' ) ? get_field( 'lp_colors' ) : array();
 $defaults = array(
-	'bg'       => 'url(https://www.toptal.com/designers/subtlepatterns/patterns/binding_dark.png)',
-	'heading'  => '#c0afd3',
-	'btn'      => '#37144e',
+	'bg'       => 'url(https://justfendz.com/wp-content/uploads/2020/01/ep_naturalblack-grey.png)',
+	'heading'  => '#c41e25',
+	'btn'      => '#c41e25',
 	'btn_text' => '#fff',
 );
 foreach ( $fields as $key => $val ) {
