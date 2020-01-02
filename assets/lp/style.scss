@@ -23,6 +23,18 @@ body {
 	font-family: $font__primary;
 }
 
+html {
+	font-size: 16px;
+
+	@media (max-width: 768px) {
+		font-size: 18px;
+	}
+}
+
+body {
+	font-size: 1em;
+}
+
 img {
 	max-width: 100%;
 	height: initial;
@@ -55,7 +67,7 @@ figure {
 	position: relative;
 	max-width: 73.125em;
 	margin: 0 auto;
-	padding: 2em 1.5rem;
+	padding: 2em 1.25rem;
 }
 
 @media (min-width: 48em) {
