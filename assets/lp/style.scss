@@ -1,12 +1,6 @@
 $border-radius: 0;
-
-:root {
-	--color__bg: #000;
-	--color__heading: #c0afd3;
-	--color__btn: #37144e;
-	--color__btn-text: #fff;
-	--border-radius: 0;
-}
+$font__primary: "Georgia", "Times New Roman", times, serif;
+$cover-width: 411px;
 
 html {
 	box-sizing: border-box;
@@ -21,7 +15,30 @@ html {
 html,
 body {
 	margin: 0;
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: $font__primary;
+}
+
+body {
+	// opacity: 0;
+
+	// &.is-active {
+	// 	opacity: 1;
+	// 	transition: opacity 0.2s;
+	// }
+}
+
+img {
+	max-width: 100%;
+	height: initial;
+}
+
+figure {
+	margin: 0 auto;
+}
+
+.wp-block-embed {
+	margin-top: 2em;
+	margin-bottom: 1em;
 }
 
 .sp-section__contain::after {
@@ -42,7 +59,7 @@ body {
 	position: relative;
 	max-width: 73.125em;
 	margin: 0 auto;
-	padding: 2em;
+	padding: 2em 1.5rem;
 }
 
 @media (min-width: 48em) {
@@ -62,6 +79,10 @@ body {
 .sp-section--intro {
 	background: var(--color__bg);
 	color: #fff;
+
+	@media (min-width: 768px) {
+		min-height: 950px;
+	}
 }
 
 .sp-section--testimonials {
@@ -75,6 +96,10 @@ body {
 .sp-section--download {
 	background: var(--color__bg);
 	color: #fff;
+
+	@media (min-width: 768px) {
+		min-height: 600px;
+	}
 }
 
 .sp__content {
@@ -110,10 +135,10 @@ body {
 
 h1 {
 	margin: 0.125em 0 0.5em;
-	font-family: "Museo Sans Rounded";
-	font-weight: 400;
+	font-family: $font__primary;
 	font-size: 1.75em;
 	color: var(--color__heading);
+	font-weight: 700;
 }
 
 @media (min-width: 36.875em) {
@@ -126,13 +151,13 @@ h1 {
 @media (min-width: 73em) {
 
 	h1 {
-		font-size: 2.75em;
+		font-size: 3em;
 	}
 }
 
 h2 {
 	margin: 0;
-	font-family: "Museo Sans Rounded";
+	font-family: $font__primary;
 	color: var(--color__heading);
 	font-size: 1.425em;
 	font-weight: 400;
@@ -154,7 +179,6 @@ h2 {
 
 h3 {
 	margin: 2em 0 1.5em;
-	font-family: "Museo Sans Rounded";
 	color: var(--color__heading);
 	font-size: 1.25em;
 	font-weight: 400;
@@ -170,14 +194,13 @@ h3 {
 @media (min-width: 73em) {
 
 	h3 {
-		font-size: 1.75em;
+		font-size: 1.5em;
 	}
 }
 
 h4 {
 	margin: 1.25em 0 0;
-	color: #fff;
-	font-family: "Archer SSm A", "Archer SSm B", Georgia, serif;
+	color: rgba(255, 255, 255, 0.85);
 	font-style: italic;
 	font-weight: 400;
 	font-size: 1.5em;
@@ -186,7 +209,7 @@ h4 {
 @media (min-width: 36.875em) {
 
 	h4 {
-		font-size: 1.75em;
+		font-size: 1.5em;
 	}
 }
 
@@ -202,7 +225,6 @@ h4 {
 	width: 10em;
 	max-width: 60%;
 	margin: 0 auto;
-	filter: invert(1);
 }
 
 .sp__logo img {
@@ -211,68 +233,78 @@ h4 {
 	max-width: 100%;
 }
 
-.sp__ipad-cont {
+.sp__cover-cont {
 	position: relative;
 	float: left;
 }
 
 @media (min-width: 25em) {
 
-	.sp__ipad-cont {
+	.sp__cover-cont {
 		width: 50%;
-		margin: 3em auto;
 		float: none;
 		clear: both;
+		padding-top: 2em;
 	}
 }
 
 @media (min-width: 48em) {
 
-	.sp__ipad-cont {
+	.sp__cover-cont {
 		position: absolute;
 		float: left;
 		clear: none;
 		width: 45%;
-		margin: 4.75em 0 0;
+		padding-top: 2em;
 	}
 }
 
 @media (min-width: 48em) and (max-height: 885px) {
 
-	.sp__ipad-cont {
-		max-width: 411px;
+	.sp__cover-cont {
+		max-width: $cover-width;
 	}
 }
 
-.sp__ipad {
+.sp__cover {
 	position: relative;
 	width: 100%;
 	float: left;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
-.sp__ipad__frame {
+.sp__cover__frame {
 	position: relative;
 	z-index: 2;
 	float: left;
 	width: 100%;
+	visibility: hidden;
+
+	@media (max-width: 768px) {
+		position: absolute;
+	}
 }
 
-.sp__ipad__img {
+.sp__cover__img {
 	position: absolute;
 	top: 0;
-	padding: 11% 4% 0 12%;
+	padding: 0;
 	width: 100%;
+
+	@media (max-width: 768px) {
+		position: relative;
+		padding: 0;
+	}
 }
 
-.sp__ipad__img img {
+.sp__cover__img img {
 	float: left;
 	width: 100%;
 }
 
 @media (min-width: 48em) {
 
-	.sp__ipad--sticky {
+	.sp__cover--sticky {
 		position: fixed;
 		top: 0;
 		max-width: 527px;
@@ -281,8 +313,8 @@ h4 {
 
 @media (min-width: 48em) and (max-height: 885px) {
 
-	.sp__ipad--sticky {
-		max-width: 411px;
+	.sp__cover--sticky {
+		max-width: $cover-width;
 	}
 }
 
@@ -294,7 +326,7 @@ h4 {
 .sp__info p {
 	margin: 0;
 	font-size: 1em;
-	line-height: 1.325;
+	line-height: 1.5;
 }
 
 @media (min-width: 48em) {
@@ -344,7 +376,7 @@ h4 {
 .sp__subinfo .btn,
 .sp__subinfo .hs-form .hs-button,
 .hs-form .sp__subinfo .hs-button {
-	display: none;
+	// display: none;
 }
 
 @media (min-width: 48em) {
@@ -371,8 +403,10 @@ h4 {
 	width: 137px;
 	height: 54px;
 	line-height: 1.75;
-	background: url(//cdn2.hubspot.net/hub/478844/file-2656011617-svg/sp/images/icon-tag.svg) no-repeat;
-	font-family: "Museo Sans Rounded";
+	background:
+		url(//cdn2.hubspot.net/hub/478844/file-2656011617-svg/sp/images/icon-tag.svg)
+		no-repeat;
+	font-family: $font__primary;
 	font-size: 1.875em;
 	text-align: left;
 }
@@ -380,7 +414,9 @@ h4 {
 .sp-section--testimonials .sp__tag,
 .sp-section--chapters .sp__tag {
 	color: #9f9c9c;
-	background: url(//cdn2.hubspot.net/hub/478844/file-2639288146-svg/sp/images/icon-tag-dark.svg) no-repeat;
+	background:
+		url(//cdn2.hubspot.net/hub/478844/file-2639288146-svg/sp/images/icon-tag-dark.svg)
+		no-repeat;
 }
 
 @media (min-width: 48em) {
@@ -393,7 +429,7 @@ h4 {
 
 .sp__price {
 	position: relative;
-	font-family: "Museo Sans Rounded";
+	font-family: $font__primary;
 	font-size: 2.5em;
 	line-height: 1.2;
 }
@@ -444,8 +480,7 @@ h4 {
 	}
 }
 
-.btn,
-.hs-form .hs-button {
+.btn {
 	display: block;
 	float: left;
 	margin: 2.4em 0 0;
@@ -457,13 +492,19 @@ h4 {
 	color: var(--color__btn-text);
 	background: var(--color__btn);
 	text-transform: uppercase;
-	font-family: "Museo Sans Rounded";
+	font-family: $font__primary;
 	font-size: 1em;
 	text-decoration: none;
 	outline: 0;
 	border: 0;
 	cursor: pointer;
 	-webkit-appearance: none;
+	letter-spacing: 0.07em;
+
+	&:hover,
+	&:focus {
+		opacity: 0.9;
+	}
 }
 
 @media (min-width: 73em) {
@@ -516,7 +557,6 @@ h4 {
 	background: #fff;
 	color: #262727;
 	font-size: 3.875em;
-	font-family: "Archer SSm A", "Archer SSm B", Georgia, serif;
 	border-radius: 50%;
 	text-align: center;
 	line-height: 1;
@@ -525,7 +565,7 @@ h4 {
 .sp__testimonial__quote {
 	float: left;
 	width: 65%;
-	font-family: "Museo Sans Rounded";
+	font-family: $font__primary;
 }
 
 .sp__testimonial__quote p {
@@ -536,13 +576,11 @@ h4 {
 
 .sp__testimonial__quote p strong {
 	color: #5d5e5e;
-	font-family: "Archer SSm A", "Archer SSm B", Georgia, serif;
 }
 
 .sp__testimonial__quote p a {
 	color: var(--color__heading);
 	text-decoration: none;
-	font-family: "Archer SSm A", "Archer SSm B", Georgia, serif;
 }
 
 @media (min-width: 73em) {
@@ -581,7 +619,7 @@ h4 {
 	width: 42.5%;
 }
 
-.sp__chapters li:nth-child(2n+2) {
+.sp__chapters li:nth-child(2n + 2) {
 	margin-left: 10%;
 }
 
@@ -733,8 +771,7 @@ h4 {
 }
 
 .sp__download__intro {
-	font-family: "Archer SSm A", "Archer SSm B", Georgia, serif;
-	margin: 0;
+	margin: 0.5em 0 0;
 	font-size: 1.125em;
 }
 
@@ -746,14 +783,13 @@ h4 {
 	display: none;
 }
 
-.hs-form .hs-form-field {
+.field-group {
 	float: left;
 	width: 100%;
 	margin: 0 1em 2em 0;
 }
 
-.hs-form input,
-.hs-form .hs-input {
+.input {
 	float: left;
 	padding: 0 1em;
 	max-width: 95%;
@@ -762,8 +798,8 @@ h4 {
 	font-size: 1.125em;
 	color: #5d5e5e;
 	outline: 0;
-	border-radius: 4px;
-	font-family: "Museo Sans Rounded";
+	border-radius: $border-radius;
+	font-family: $font__primary;
 	border: 2px solid #fff;
 	-webkit-appearance: none;
 }
@@ -804,7 +840,7 @@ h4 {
 	border-radius: 0;
 	font-size: 1em;
 	color: #5d5e5e;
-	font-family: "Museo Sans Rounded";
+	font-family: $font__primary;
 	outline: 0;
 }
 
@@ -818,7 +854,7 @@ h4 {
 	border-top: 5px solid #5d5e5e;
 }
 
-.hs-form .hs-button {
+input[type="submit"] {
 	float: left;
 	margin: 0;
 	width: auto;
@@ -834,7 +870,7 @@ h4 {
 		width: 43%;
 	}
 
-	.hs-form .hs-form-field:nth-of-type(2n+2) {
+	.hs-form .hs-form-field:nth-of-type(2n + 2) {
 		margin-left: 6%;
 	}
 
@@ -855,6 +891,18 @@ input,
 	text-align: center;
 }
 
+.sp-footer__logo {
+	width: 100%;
+	max-width: 100px;
+	margin: 0 auto 1em;
+	opacity: 0.5;
+
+	&:hover,
+	&:focus {
+		opacity: 1;
+	}
+}
+
 .sp__footer a {
 	display: block;
 	color: var(--color__heading);
@@ -867,4 +915,33 @@ input,
 	max-width: 176px;
 	margin: 0 auto 1em;
 	border: 0;
+}
+
+.mc-field-group {
+	position: relative;
+}
+
+#download #mc_embed_signup div.mce_inline_error {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+	font-size: 13px;
+	letter-spacing: 0.02em;
+	word-spacing: 0.05em;
+	font-weight: 400;
+}
+
+#mce-success-response {
+	content: "";
+	visibility: hidden;
+	font-size: 0;
+}
+
+#mce-success-response::after {
+	content: "Check your email for the download link!";
+	display: block;
+	visibility: visible;
+	font-size: 14px;
+	margin-bottom: 1em;
 }
