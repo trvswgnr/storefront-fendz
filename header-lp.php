@@ -5,9 +5,6 @@
  * @package fendz
  */
 
-// landing page ACF.
-// require_once get_stylesheet_directory() . '/acf/fields-landing-page.php';
-
 /**
  * Template Setup
  */
@@ -25,15 +22,17 @@ add_action(
 	9999
 );
 
-$fields        = get_field( 'lp_colors' ) ? get_field( 'lp_colors' ) : array();
-$defaults      = array(
-	'bg'       => '#000',
+$fields   = get_field( 'lp_colors' ) ? get_field( 'lp_colors' ) : array();
+$defaults = array(
+	'bg'       => 'url(https://www.toptal.com/designers/subtlepatterns/patterns/binding_dark.png)',
 	'heading'  => '#c0afd3',
 	'btn'      => '#37144e',
 	'btn_text' => '#fff',
 );
-$colors        = wp_parse_args( $fields, $defaults );
-$colors['btn'] = $colors['btn'] ? $colors['button'] : $colors['heading'];
+foreach ( $fields as $key => $val ) {
+	$fields[ $key ] = ! empty( $fields[ $key ] ) ? $fields[ $key ] : $defaults[ $key ];
+}
+$colors = wp_parse_args( $fields, $defaults );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -42,15 +41,15 @@ $colors['btn'] = $colors['btn'] ? $colors['button'] : $colors['heading'];
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php wp_head(); ?>
 <style>
 	:root {
-		--color__bg: <?php echo esc_attr( $color['bg'] ); ?>;
-		--color__heading: <?php echo esc_attr( $color['heading'] ); ?>;
-		--color__btn: <?php echo esc_attr( $color['btn'] ); ?>;
-		--color__btn-text: <?php echo esc_attr( $color['btn_text'] ); ?>;
+		--color__bg: <?php echo esc_attr( $colors['bg'] ); ?>;
+		--color__heading: <?php echo esc_attr( $colors['heading'] ); ?>;
+		--color__btn: <?php echo esc_attr( $colors['btn'] ); ?>;
+		--color__btn-text: <?php echo esc_attr( $colors['btn_text'] ); ?>;
 	}
 </style>
-<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
