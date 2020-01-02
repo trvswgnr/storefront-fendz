@@ -41,21 +41,21 @@ figure {
 	margin-bottom: 1em;
 }
 
-.sp-section__contain::after {
+.lp-section__contain::after {
 	display: table;
 	clear: both;
 	content: "";
 }
 
-.sp-section--intro,
-.sp-section--testimonials,
-.sp-section--chapters,
-.sp-section--download {
+.lp-section--intro,
+.lp-section--testimonials,
+.lp-section--details,
+.lp-section--download {
 	float: left;
 	width: 100%;
 }
 
-.sp-section__contain {
+.lp-section__contain {
 	position: relative;
 	max-width: 73.125em;
 	margin: 0 auto;
@@ -64,19 +64,19 @@ figure {
 
 @media (min-width: 48em) {
 
-	.sp-section__contain {
+	.lp-section__contain {
 		padding: 4em 2em;
 	}
 }
 
 @media (min-width: 73em) {
 
-	.sp-section__contain {
+	.lp-section__contain {
 		padding: 5em 2em;
 	}
 }
 
-.sp-section--intro {
+.lp-section--intro {
 	background: var(--color__bg);
 	color: #fff;
 
@@ -85,15 +85,15 @@ figure {
 	}
 }
 
-.sp-section--testimonials {
+.lp-section--testimonials {
 	background: #fff;
 }
 
-.sp-section--chapters {
+.lp-section--details {
 	background: #fafafa;
 }
 
-.sp-section--download {
+.lp-section--download {
 	background: var(--color__bg);
 	color: #fff;
 
@@ -102,7 +102,7 @@ figure {
 	}
 }
 
-.sp__content {
+.lp__content {
 	float: left;
 	width: 100%;
 
@@ -114,20 +114,20 @@ figure {
 
 @media (min-width: 48em) {
 
-	.sp__content {
+	.lp__content {
 		float: right;
 		width: 45%;
 	}
 }
 
-.sp__content__form {
+.lp__content__form {
 	max-width: 80%;
 	margin: auto;
 }
 
 @media (min-width: 48em) {
 
-	.sp__content__form {
+	.lp__content__form {
 		float: right;
 		width: 45%;
 	}
@@ -220,27 +220,27 @@ h4 {
 	}
 }
 
-.sp__logo {
+.lp__logo {
 	display: block;
 	width: 10em;
 	max-width: 60%;
 	margin: 0 auto;
 }
 
-.sp__logo img {
+.lp__logo img {
 	border: 0;
 	height: auto;
 	max-width: 100%;
 }
 
-.sp__cover-cont {
+.lp__cover-cont {
 	position: relative;
 	float: left;
 }
 
 @media (min-width: 25em) {
 
-	.sp__cover-cont {
+	.lp__cover-cont {
 		width: 50%;
 		float: none;
 		clear: both;
@@ -250,7 +250,7 @@ h4 {
 
 @media (min-width: 48em) {
 
-	.sp__cover-cont {
+	.lp__cover-cont {
 		position: absolute;
 		float: left;
 		clear: none;
@@ -261,19 +261,19 @@ h4 {
 
 @media (min-width: 48em) and (max-height: 885px) {
 
-	.sp__cover-cont {
+	.lp__cover-cont {
 		max-width: $cover-width;
 	}
 }
 
-.sp__cover {
+.lp__cover {
 	position: relative;
 	width: 100%;
 	float: left;
 	// overflow: hidden;
 }
 
-.sp__cover__frame {
+.lp__cover__frame {
 	position: relative;
 	z-index: 2;
 	float: left;
@@ -285,7 +285,7 @@ h4 {
 	}
 }
 
-.sp__cover__img {
+.lp__cover__img {
 	position: absolute;
 	top: 0;
 	padding: 0;
@@ -297,14 +297,14 @@ h4 {
 	}
 }
 
-.sp__cover__img img {
+.lp__cover__img img {
 	float: left;
 	width: 100%;
 }
 
 @media (min-width: 48em) {
 
-	.sp__cover--sticky {
+	.lp__cover--sticky {
 		position: fixed;
 		top: 0;
 		max-width: 527px;
@@ -313,30 +313,35 @@ h4 {
 
 @media (min-width: 48em) and (max-height: 885px) {
 
-	.sp__cover--sticky {
+	.lp__cover--sticky {
 		max-width: $cover-width;
 	}
 }
 
-.sp__info {
+.lp__info {
 	float: left;
 	width: 100%;
 }
 
-.sp__info p {
+.lp__info p {
 	margin: 0;
 	font-size: 1em;
 	line-height: 1.5;
+	margin-bottom: 1.2em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 @media (min-width: 48em) {
 
-	.sp__info {
+	.lp__info {
 		float: right;
 		width: 45%;
 	}
 
-	.sp__info p {
+	.lp__info p {
 		font-size: 1.125em;
 		line-height: 1.5;
 	}
@@ -366,22 +371,22 @@ h4 {
 	}
 }
 
-.sp__subinfo {
+.lp__subinfo {
 	float: left;
 	width: 100%;
 	margin-bottom: 3em;
 	text-align: center;
 }
 
-.sp__subinfo .btn,
-.sp__subinfo .hs-form .hs-button,
-.hs-form .sp__subinfo .hs-button {
+.lp__subinfo .btn,
+.lp__subinfo .hs-form .hs-button,
+.hs-form .lp__subinfo .hs-button {
 	// display: none;
 }
 
 @media (min-width: 48em) {
 
-	.sp__subinfo {
+	.lp__subinfo {
 		float: right;
 		width: 45%;
 		clear: right;
@@ -389,14 +394,14 @@ h4 {
 		text-align: left;
 	}
 
-	.sp__subinfo .btn,
-	.sp__subinfo .hs-form .hs-button,
-	.hs-form .sp__subinfo .hs-button {
+	.lp__subinfo .btn,
+	.lp__subinfo .hs-form .hs-button,
+	.hs-form .lp__subinfo .hs-button {
 		display: block;
 	}
 }
 
-.sp__tag {
+.lp__tag {
 	display: inline-block;
 	margin: 0 1em 0 0;
 	padding: 0 0 0 0.625em;
@@ -411,8 +416,8 @@ h4 {
 	text-align: left;
 }
 
-.sp-section--testimonials .sp__tag,
-.sp-section--chapters .sp__tag {
+.lp-section--testimonials .lp__tag,
+.lp-section--details .lp__tag {
 	color: #9f9c9c;
 	background:
 		url(//cdn2.hubspot.net/hub/478844/file-2639288146-svg/sp/images/icon-tag-dark.svg)
@@ -421,28 +426,28 @@ h4 {
 
 @media (min-width: 48em) {
 
-	.sp__tag {
+	.lp__tag {
 		display: block;
 		float: left;
 	}
 }
 
-.sp__price {
+.lp__price {
 	position: relative;
 	font-family: $font__primary;
 	font-size: 2.5em;
 	line-height: 1.2;
 }
 
-.sp__price::after,
-.sp__price::before {
+.lp__price::after,
+.lp__price::before {
 	position: absolute;
 	content: "";
 	-ms-transform: rotate(-12deg);
 	transform: rotate(-12deg);
 }
 
-.sp__price::before {
+.lp__price::before {
 	top: 22px;
 	left: -15px;
 	width: 140%;
@@ -450,7 +455,7 @@ h4 {
 	background: var(--color__heading);
 }
 
-.sp__price::after {
+.lp__price::after {
 	top: 24px;
 	left: -15px;
 	width: 140%;
@@ -458,24 +463,24 @@ h4 {
 	background: #fff;
 }
 
-.sp-section--testimonials .sp__price,
-.sp-section--chapters .sp__price {
+.lp-section--testimonials .lp__price,
+.lp-section--details .lp__price {
 	color: #9f9c9c;
 }
 
-.sp-section--testimonials .sp__price::before,
-.sp-section--chapters .sp__price::before {
+.lp-section--testimonials .lp__price::before,
+.lp-section--details .lp__price::before {
 	background: #fff;
 }
 
-.sp-section--testimonials .sp__price::after,
-.sp-section--chapters .sp__price::after {
+.lp-section--testimonials .lp__price::after,
+.lp-section--details .lp__price::after {
 	background: #9f9c9c;
 }
 
 @media (min-width: 48em) {
 
-	.sp__price {
+	.lp__price {
 		float: left;
 	}
 }
@@ -515,14 +520,14 @@ h4 {
 	}
 }
 
-.sp__testimonials {
+.lp__testimonials {
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-.sp__testimonial {
+.lp__testimonial {
 	float: left;
 	width: 100%;
 	margin: 2em 0 0;
@@ -530,24 +535,24 @@ h4 {
 
 @media (min-width: 73em) {
 
-	.sp__testimonial {
+	.lp__testimonial {
 		margin: 4.125em 0 0;
 	}
 }
 
-.sp__testimonial__img {
+.lp__testimonial__img {
 	position: relative;
 	float: left;
 	width: 25%;
 	margin: 0 10% 0 0;
 }
 
-.sp__testimonial__img img {
+.lp__testimonial__img img {
 	border-radius: 50%;
 	width: 100%;
 }
 
-.sp__testimonial__img .quote {
+.lp__testimonial__img .quote {
 	display: block;
 	position: absolute;
 	top: 5px;
@@ -562,35 +567,35 @@ h4 {
 	line-height: 1;
 }
 
-.sp__testimonial__quote {
+.lp__testimonial__quote {
 	float: left;
 	width: 65%;
 	font-family: $font__primary;
 }
 
-.sp__testimonial__quote p {
+.lp__testimonial__quote p {
 	color: #9f9c9c;
 	font-size: 1em;
 	line-height: 1.375;
 }
 
-.sp__testimonial__quote p strong {
+.lp__testimonial__quote p strong {
 	color: #5d5e5e;
 }
 
-.sp__testimonial__quote p a {
+.lp__testimonial__quote p a {
 	color: var(--color__heading);
 	text-decoration: none;
 }
 
 @media (min-width: 73em) {
 
-	.sp__testimonial__quote p {
+	.lp__testimonial__quote p {
 		line-height: 1.5;
 	}
 }
 
-.sp__chapter__intro {
+.lp__detail__intro {
 	margin: 1.5em 0 0;
 	font-size: 1em;
 	line-height: 1.375;
@@ -599,35 +604,35 @@ h4 {
 
 @media (min-width: 73em) {
 
-	.sp__chapter__intro {
+	.lp__detail__intro {
 		margin: 1.875em 0 0;
 		font-size: 1.125em;
 		line-height: 1.5;
 	}
 }
 
-.sp__chapters {
+.lp__details {
 	margin: 2.813em 0 0;
 	padding: 0;
 	list-style: none;
 	text-align: center;
 }
 
-.sp__chapters li {
+.lp__details li {
 	float: left;
 	margin: 0 0 1.5em;
 	width: 42.5%;
 }
 
-.sp__chapters li:nth-child(2n + 2) {
+.lp__details li:nth-child(2n + 2) {
 	margin-left: 10%;
 }
 
-.sp__chapters li .img-contain {
+.lp__details li .img-contain {
 	position: relative;
 }
 
-.sp__chapters li .img-contain::before {
+.lp__details li .img-contain::before {
 	display: none;
 	position: absolute;
 	bottom: -2px;
@@ -638,7 +643,7 @@ h4 {
 	background: #eee;
 }
 
-.sp__chapters li img {
+.lp__details li img {
 	position: relative;
 	max-width: 100%;
 	border: 2px solid #9f9c9c;
@@ -646,16 +651,16 @@ h4 {
 
 @media (min-width: 48em) {
 
-	.sp__chapters li {
+	.lp__details li {
 		width: 30%;
 	}
 
-	.sp__chapters li .img-contain::before {
+	.lp__details li .img-contain::before {
 		display: block;
 	}
 }
 
-.sp__chapters__header {
+.lp__details__header {
 	font-size: 1em;
 	line-height: 1.125;
 	text-transform: uppercase;
@@ -664,7 +669,7 @@ h4 {
 
 @media (min-width: 48em) {
 
-	.sp__chapters__header {
+	.lp__details__header {
 		margin-bottom: 0.6em;
 		text-align: left;
 	}
@@ -672,7 +677,7 @@ h4 {
 
 @media (min-width: 48em) {
 
-	.sp__chapters li {
+	.lp__details li {
 		float: none;
 		display: inline-block;
 		vertical-align: top;
@@ -681,21 +686,21 @@ h4 {
 
 @media (min-width: 73em) {
 
-	.sp__chapters {
+	.lp__details {
 		margin: 4.813em 0 0;
 	}
 
-	.sp__chapters li {
+	.lp__details li {
 		margin: 0 0 2.5em;
 	}
 
-	.sp__chapters__header {
+	.lp__details__header {
 		font-size: 1.125em;
 		line-height: 1.2;
 	}
 }
 
-.sp__chapters__description {
+.lp__details__description {
 	font-size: 0.85em;
 	font-style: oblique;
 	text-align: left;
@@ -704,12 +709,12 @@ h4 {
 
 @media (min-width: 73em) {
 
-	.sp__chapters__description {
+	.lp__details__description {
 		margin: 0;
 	}
 }
 
-.sp__stuck {
+.lp__stuck {
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -723,9 +728,9 @@ h4 {
 	transition: 0.2s bottom;
 }
 
-.sp__stuck .btn,
-.sp__stuck .hs-form .hs-button,
-.hs-form .sp__stuck .hs-button {
+.lp__stuck .btn,
+.lp__stuck .hs-form .hs-button,
+.hs-form .lp__stuck .hs-button {
 	float: none;
 	margin: 0 auto;
 	display: inline-block;
@@ -738,39 +743,39 @@ h4 {
 
 @media (min-width: 48em) {
 
-	.sp__stuck {
+	.lp__stuck {
 		display: none;
 	}
 }
 
-.sp__stuck--hidden {
+.lp__stuck--hidden {
 	bottom: -4.375em;
 }
 
-.sp__get {
+.lp__get {
 	display: none;
 }
 
 @media (min-width: 48em) {
 
-	.sp__get {
+	.lp__get {
 		display: block;
 	}
 }
 
-.sp-section--download h1 {
+.lp-section--download h1 {
 	margin: 1em 0 0.25em;
 	clear: left;
 }
 
 @media (min-width: 48em) {
 
-	.sp-section--download h1 {
+	.lp-section--download h1 {
 		margin: 2.375em 0 0.25em;
 	}
 }
 
-.sp__download__intro {
+.lp__download__intro {
 	margin: 0.5em 0 0;
 	font-size: 1.125em;
 }
@@ -886,12 +891,12 @@ input,
 	-webkit-appearance: none;
 }
 
-.sp__footer {
+.lp__footer {
 	padding-top: 0;
 	text-align: center;
 }
 
-.sp-footer__logo {
+.lp-footer__logo {
 	width: 100%;
 	max-width: 100px;
 	margin: 0 auto 1em;
@@ -903,14 +908,14 @@ input,
 	}
 }
 
-.sp__footer a {
+.lp__footer a {
 	display: block;
 	color: var(--color__heading);
 	text-decoration: none;
 	font-size: 1.125em;
 }
 
-.sp__footer__logo {
+.lp__footer__logo {
 	display: block;
 	max-width: 176px;
 	margin: 0 auto 1em;
