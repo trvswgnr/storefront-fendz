@@ -82,7 +82,7 @@ endif;
 $fields   = get_field( 'lp_footer' ) ? get_field( 'lp_footer' ) : array();
 $defaults = array(
 	'heading'    => 'Get your free sample pack:',
-	'subheading' => 'Start making your tracks thicc.',
+	'subheading' => 'Start making thicc tracks.',
 );
 $footer   = wp_parse_args( $fields, $defaults );
 ?>
