@@ -7,8 +7,17 @@ $color__heading: #c41e25;
 $color__btn: #c41e25;
 $color__btn-text: #fff;
 
+$mobile: 400px;
+$tablet: 768px;
+$desktop: 1200px;
+
 html {
 	box-sizing: border-box;
+	font-size: 16px;
+
+	@media (max-width: $tablet) {
+		font-size: 18px;
+	}
 }
 
 *,
@@ -21,14 +30,6 @@ html,
 body {
 	margin: 0;
 	font-family: $font__primary;
-}
-
-html {
-	font-size: 16px;
-
-	@media (max-width: 768px) {
-		font-size: 18px;
-	}
 }
 
 body {
@@ -67,17 +68,17 @@ figure {
 	position: relative;
 	max-width: 73.125em;
 	margin: 0 auto;
-	padding: 2em 1.25rem;
+	padding: 3em 1.25rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp-section__contain {
 		padding: 4em 2em;
 	}
 }
 
-@media (min-width: 73em) {
+@media (min-width: $desktop) {
 
 	.lp-section__contain {
 		padding: 5em 2em;
@@ -89,7 +90,7 @@ figure {
 	background-image: var(--color__bg);
 	color: #fff;
 
-	@media (min-width: 768px) {
+	@media (min-width: $tablet) {
 		min-height: 950px;
 	}
 }
@@ -103,11 +104,16 @@ figure {
 }
 
 .lp-section--download {
-	background: var(--color__bg);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	background: #121212;
+	background-image: var(--color__bg);
 	color: #fff;
+	min-height: 100vh;
 
-	@media (min-width: 768px) {
-		min-height: 600px;
+	@media (min-width: $tablet) {
+		display: block;
 	}
 }
 
@@ -121,7 +127,7 @@ figure {
 	}
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__content {
 		float: right;
@@ -130,11 +136,15 @@ figure {
 }
 
 .lp__content__form {
-	max-width: 80%;
+	max-width: 100%;
 	margin: auto;
+
+	@media (min-width: $tablet) {
+		max-width: 80%;
+	}
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__content__form {
 		float: right;
@@ -157,7 +167,7 @@ h1 {
 	}
 }
 
-@media (min-width: 73em) {
+@media (min-width: $desktop) {
 
 	h1 {
 		font-size: 3em;
@@ -179,7 +189,7 @@ h2 {
 	}
 }
 
-@media (min-width: 73em) {
+@media (min-width: $desktop) {
 
 	h2 {
 		font-size: 2.125em;
@@ -200,7 +210,7 @@ h3 {
 	}
 }
 
-@media (min-width: 73em) {
+@media (min-width: $desktop) {
 
 	h3 {
 		font-size: 1.5em;
@@ -222,7 +232,7 @@ h4 {
 	}
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	h4 {
 		margin: 3.25em 0 0;
@@ -257,7 +267,7 @@ h4 {
 	}
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__cover-cont {
 		position: absolute;
@@ -268,7 +278,7 @@ h4 {
 	}
 }
 
-@media (min-width: 48em) and (max-height: 885px) {
+@media (min-width: $tablet) and (max-height: 885px) {
 
 	.lp__cover-cont {
 		max-width: $cover-width;
@@ -289,7 +299,7 @@ h4 {
 	width: 100%;
 	visibility: hidden;
 
-	@media (max-width: 768px) {
+	@media (max-width: $tablet) {
 		position: absolute;
 	}
 }
@@ -300,7 +310,7 @@ h4 {
 	padding: 0;
 	width: 100%;
 
-	@media (max-width: 768px) {
+	@media (max-width: $tablet) {
 		position: relative;
 		padding: 0;
 	}
@@ -311,7 +321,7 @@ h4 {
 	width: 100%;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__cover--sticky {
 		position: fixed;
@@ -320,7 +330,7 @@ h4 {
 	}
 }
 
-@media (min-width: 48em) and (max-height: 885px) {
+@media (min-width: $tablet) and (max-height: 885px) {
 
 	.lp__cover--sticky {
 		max-width: $cover-width;
@@ -330,7 +340,7 @@ h4 {
 .lp__info h4 {
 	font-size: 1.3em;
 
-	@media (min-width: 768px) {
+	@media (min-width: $tablet) {
 		font-size: 1.5em;
 	}
 }
@@ -351,7 +361,7 @@ h4 {
 	}
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__info {
 		float: right;
@@ -401,7 +411,7 @@ h4 {
 	// display: none;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__subinfo {
 		float: right;
@@ -441,7 +451,7 @@ h4 {
 		no-repeat;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__tag {
 		display: block;
@@ -495,7 +505,7 @@ h4 {
 	background: #9f9c9c;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__price {
 		float: left;
@@ -529,7 +539,7 @@ h4 {
 	}
 }
 
-@media (min-width: 73em) {
+@media (min-width: $desktop) {
 
 	.btn,
 	.hs-form .hs-button {
@@ -550,7 +560,7 @@ h4 {
 	margin: 2em 0 0;
 }
 
-@media (min-width: 73em) {
+@media (min-width: $desktop) {
 
 	.lp__testimonial {
 		margin: 4.125em 0 0;
@@ -605,7 +615,7 @@ h4 {
 	text-decoration: none;
 }
 
-@media (min-width: 73em) {
+@media (min-width: $desktop) {
 
 	.lp__testimonial__quote p {
 		line-height: 1.5;
@@ -619,7 +629,7 @@ h4 {
 	color: #9f9c9c;
 }
 
-@media (min-width: 73em) {
+@media (min-width: $desktop) {
 
 	.lp__detail__intro {
 		margin: 1.875em 0 0;
@@ -666,7 +676,7 @@ h4 {
 	border: 2px solid #9f9c9c;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__details li {
 		width: 30%;
@@ -684,7 +694,7 @@ h4 {
 	color: #000;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__details__header {
 		margin-bottom: 0.6em;
@@ -692,7 +702,7 @@ h4 {
 	}
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__details li {
 		float: none;
@@ -701,7 +711,7 @@ h4 {
 	}
 }
 
-@media (min-width: 73em) {
+@media (min-width: $desktop) {
 
 	.lp__details {
 		margin: 4.813em 0 0;
@@ -724,7 +734,7 @@ h4 {
 	color: #5d5e5e;
 }
 
-@media (min-width: 73em) {
+@media (min-width: $desktop) {
 
 	.lp__details__description {
 		margin: 0;
@@ -758,7 +768,7 @@ h4 {
 	border: 2px solid #fff;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__stuck {
 		display: none;
@@ -773,7 +783,7 @@ h4 {
 	display: none;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp__get {
 		display: block;
@@ -785,7 +795,7 @@ h4 {
 	clear: left;
 }
 
-@media (min-width: 48em) {
+@media (min-width: $tablet) {
 
 	.lp-section--download h1 {
 		margin: 2.375em 0 0.25em;
@@ -814,7 +824,7 @@ h4 {
 .input {
 	float: left;
 	padding: 0 1em;
-	max-width: 95%;
+	max-width: 100%;
 	height: 2.72em;
 	background: #fff;
 	font-size: 1.125em;
@@ -824,6 +834,14 @@ h4 {
 	font-family: $font__primary;
 	border: 2px solid #fff;
 	-webkit-appearance: none;
+
+	@media (min-width: $tablet) {
+		max-width: 85%;
+	}
+}
+
+label {
+	display: block;
 }
 
 .hs-form input.invalid,
@@ -882,7 +900,7 @@ input[type="submit"] {
 	width: auto;
 }
 
-@media (min-width: 73em) {
+@media (min-width: $desktop) {
 
 	.hs-form {
 		margin: 3.5em 0 0;
