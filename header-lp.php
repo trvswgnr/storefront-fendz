@@ -50,6 +50,14 @@ $colors = wp_parse_args( $fields, $defaults );
 		--color__btn-text: <?php echo esc_attr( $colors['btn_text'] ); ?>;
 	}
 </style>
+<?php
+$og_image = get_field( 'meta_image' ) ? get_field( 'meta_image' ) : get_the_post_thumbnail_url( get_the_ID(), 'full' );
+$og_desc  = get_field( 'meta_desc' ) ? get_field( 'meta_desc' ) : wp_strip_all_tags( get_the_excerpt(), true );
+?>
+<meta property="og:title" content="<?php the_title(); ?>">
+<meta property="og:description" content="<?php echo esc_html( $og_desc ); ?>">
+<meta property="og:image" content="<?php echo esc_url( $og_image ); ?>">
+<meta property="og:url" content="<?php the_permalink(); ?>">
 </head>
 
 <body <?php body_class(); ?>>
