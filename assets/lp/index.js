@@ -13,7 +13,7 @@
 
 	$( '.js-scroll-anchor' ).click( function( event ) {
 		event.preventDefault();
-		$( 'html, body' ).animate( { scrollTop: $( $( this ).attr( 'href' ) ).offset().top }, 200 );
+		$( 'html, body' ).animate( { scrollTop: $( $( this ).attr( 'href' ) ).offset().top }, 400 );
 	} );
 
 	$( '.shrinking-text' ).each( function() {
