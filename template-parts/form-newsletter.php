@@ -13,8 +13,8 @@
 		novalidate>
 		<div id="mc_embed_signup_scroll">
 			<div class="mc-field-group field-group">
-				<label for="mce-EMAIL">Email</label>
-				<input type="email" value="" name="EMAIL" class="required email input" id="mce-EMAIL">
+				<!-- <label for="mce-EMAIL">Email</label> -->
+				<input type="email" value="" name="EMAIL" class="required email input" id="mce-EMAIL" placeholder="Your Email">
 			</div>
 			<div class="mc-field-group input-group" style="overflow: hidden;min-height: 0;height: 0;padding: 0;">
 				<strong>Downloads </strong>
