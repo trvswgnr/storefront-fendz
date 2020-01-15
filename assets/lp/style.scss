@@ -995,6 +995,16 @@ input,
 	font-weight: 400;
 }
 
+#mc_embed_signup div.mce_inline_error {
+	width: 85%;
+	position: absolute;
+	top: 100%;
+
+	@media (max-width: $tablet) {
+		width: 100%;
+	}
+}
+
 #mce-success-response {
 	content: "";
 	visibility: hidden;
@@ -1006,5 +1016,6 @@ input,
 	display: block;
 	visibility: visible;
 	font-size: 22px;
+	font-size: calc(13px + 1vw);
 	margin-bottom: 1em;
 }
