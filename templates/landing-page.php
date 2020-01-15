@@ -37,7 +37,8 @@ $hero = wp_parse_args( $fields, $defaults );
 		</div>
 
 		<div class="lp__subinfo">
-			<a href="<?php echo esc_url( $hero['btn']['url'] ); ?>" class="btn js-scroll-anchor"><?php echo esc_html( $hero['btn']['title'] ); ?></a>
+			<h5 class="lp__dl-intro">Enter your email to get the sample pack now:</h5>
+			<?php get_template_part( 'template-parts/form', 'newsletter' ); ?>
 		</div>
 
 		<div class="lp__cover-cont">
@@ -76,9 +77,7 @@ if ( have_posts() ) :
 		<?php
 	endif;
 endif;
-?>
 
-<?php
 $fields   = get_field( 'lp_footer' ) ? get_field( 'lp_footer' ) : array();
 $defaults = array(
 	'heading'    => 'Get your free sample pack:',
